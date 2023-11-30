@@ -1162,3 +1162,14 @@ img {
     bottom: -4.5rem;
   }
 }
+
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 2rem; /* Adjust margin as needed */
+}
+
+.contact__form {
+  max-width: 600px; /* Set a maximum width for the form */
+  margin: 0 auto; /* Center-align the form */
+}

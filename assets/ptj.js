@@ -177,3 +177,52 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (validateForm()) {
+      // Here, you can perform the form submission action
+      // For example: sendFormData();
+      alert('Form submitted successfully!');
+      // Clear form after successful submission
+      contactForm.reset();
+    }
+  });
+
+  function validateForm() {
+    let isValid = true;
+
+    const nameInput = document.getElementById("name");
+    const nameError = document.getElementById("nameError");
+    if (nameInput.value.trim() === "") {
+      nameError.textContent = "Name is required";
+      isValid = false;
+    } else {
+      nameError.textContent = "";
+    }
+
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value.trim())) {
+      emailError.textContent = "Please enter a valid email address";
+      isValid = false;
+    } else {
+      emailError.textContent = "";
+    }
+
+    const messageInput = document.getElementById("message");
+    const messageError = document.getElementById("messageError");
+    if (messageInput.value.trim() === "") {
+      messageError.textContent = "Message cannot be empty";
+      isValid = false;
+    } else {
+      messageError.textContent = "";
+    }
+
+    return isValid;
+  }
+});

@@ -680,7 +680,7 @@
       </section>
 
       <!--===================== Contact Me =====================-->
-      <section class="contact section" id="contact">
+      <!-- <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch</span>
 
@@ -756,7 +756,44 @@
           </form>
         </div>
       </section>
-    </main>
+    </main> -->
+    <h1 class="form-heading">Enquiry Form (Contact)</h1>
+    <form action="" class="contact__form grid" id="contactForm">
+      <div class="contact__inputs grid">
+        <div class="contact__content">
+          <label for="name" class="content__label">Name</label>
+          <input type="text" id="name" class="contact__input" required />
+          <div class="error-message" id="nameError"></div>
+        </div>
+    
+        <div class="contact__content">
+          <label for="email" class="content__label">Email</label>
+          <input type="email" id="email" class="contact__input" required />
+          <div class="error-message" id="emailError"></div>
+        </div>
+      </div>
+    
+      <div class="contact__content">
+        <label for="message" class="content__label">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="0"
+          rows="7"
+          class="contact__input"
+          required
+        ></textarea>
+        <div class="error-message" id="messageError"></div>
+      </div>
+    
+      <div>
+        <button type="submit" class="button button--flex">
+          Send Message
+          <i class="uil uil-message button__icon"></i>
+        </button>
+      </div>
+    </form>
+    
 
     <!--================== Footer ===============-->
     <footer class="footer">
